@@ -23,7 +23,14 @@
         <entry key="..\:/android/movie/app/src/main/res/layout/fragment_tv.xml" value="0.25" />
         <entry key="..\:/android/movie/app/src/main/res/layout/layout_movie_item.xml" value="0.22592592592592592" />
         <entry key="..\:/android/movie/app/src/main/res/layout/layout_tv_shows_item.xml" value="0.22592592592592592" />
+        <entry key="..\:/movie/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/movie/app/src/main/res/layout/fragment_detail_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/movie/app/src/main/res/layout/fragment_favorite.xml" value="0.25416666666666665" />
+        <entry key="..\:/movie/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/movie/app/src/main/res/layout/fragment_movie.xml" value="0.2542991141219385" />
+        <entry key="..\:/movie/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/movie/app/src/main/res/layout/layout_movie_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/movie/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

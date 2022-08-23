@@ -158,7 +158,7 @@ class MovieFragment : Fragment(), BottomDialogInterface {
             binding.overviewTextView.text = overview
             binding.ivOpen.setOnClickListener {
                 Navigation.findNavController(viewReference)
-                    .navigate(R.id.action_homeFragment_to_detailScreenFragment)
+                    .navigate(R.id.action_movieFragment_to_detailScreenFragment)
             }
             binding.ratingTextView.text = voteAverage.toString()
         }

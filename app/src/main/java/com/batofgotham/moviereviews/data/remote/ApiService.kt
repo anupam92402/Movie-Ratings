@@ -3,7 +3,6 @@ package com.batofgotham.moviereviews.data.remote.movies
 import com.batofgotham.moviereviews.data.model.Configuration
 
 import com.batofgotham.moviereviews.data.model.MovieNetworkResponse
-import com.batofgotham.moviereviews.data.model.TvNetworkResponse
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -51,17 +50,6 @@ interface ApiService {
 
     @GET("/configuration?api_key=$API_KEY")
     suspend fun getApiConfig(): Configuration
-
-    @GET("tv/top_rated?api_key=$API_KEY")
-    suspend fun getTopRatedTvShows(
-        @Query("page") page: Int
-    ): TvNetworkResponse
-
-    @GET("search/tv?api_key=$API_KEY")
-    suspend fun getSearchTvShows(
-        @Query("query") query: String,
-        @Query("page") page: Int
-    ): TvNetworkResponse
 }
 
 
