@@ -1,14 +1,13 @@
 package com.batofgotham.moviereviews.ui.detail
 
-import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.batofgotham.moviereviews.R
 import com.batofgotham.moviereviews.databinding.FragmentDetailScreenBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -40,6 +39,9 @@ class DetailScreenFragment : BottomSheetDialogFragment() {
 //        val bottomSheetBehavior = BottomSheetBehavior.from(binding.detailBottomSheetContainer)
 //
 //        bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback)
+
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility =
+            View.GONE
     }
 
 

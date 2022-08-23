@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import com.batofgotham.moviereviews.R
@@ -17,6 +18,7 @@ import com.batofgotham.moviereviews.databinding.FragmentMovieBinding
 import com.batofgotham.moviereviews.utils.BottomDialogInterface
 import com.batofgotham.moviereviews.utils.Utils
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -39,6 +41,7 @@ class MovieFragment : Fragment(), BottomDialogInterface {
 
     private lateinit var pagingAdapter: MovieAdapter
 
+    private lateinit var viewReference: View
 
     private val viewModel: MovieViewModel by viewModels()
 
@@ -56,7 +59,7 @@ class MovieFragment : Fragment(), BottomDialogInterface {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setupDetailBottomSheet()
-
+        viewReference = view
         val recyclerView = binding.moviesRecyclerView
         val gridLayoutManager = recyclerView.layoutManager as GridLayoutManager
         gridLayoutManager.spanCount = 3
@@ -153,6 +156,10 @@ class MovieFragment : Fragment(), BottomDialogInterface {
             binding.posterImageView.setImageResource(R.drawable.ic_launcher_background)
             binding.releaseYearTextView.text = Utils.getYear(Utils.getDate(releaseDate)).toString()
             binding.overviewTextView.text = overview
+            binding.ivOpen.setOnClickListener {
+                Navigation.findNavController(viewReference)
+                    .navigate(R.id.action_homeFragment_to_detailScreenFragment)
+            }
             binding.ratingTextView.text = voteAverage.toString()
         }
 
@@ -161,6 +168,12 @@ class MovieFragment : Fragment(), BottomDialogInterface {
         Glide.with(requireContext())
             .load(posterUrl)
             .into(binding.posterImageView)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNavigationView)?.visibility =
+            View.VISIBLE
     }
 
 
